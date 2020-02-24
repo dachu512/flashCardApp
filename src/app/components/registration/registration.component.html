@@ -1,1 +1,19 @@
-<p>registration works!</p>
+<div class="bgImg"></div>
+<div class="registrationWrapper">
+  <div class="registrationBox">
+      <h1 class="registrationFormTitle">Rejestracja</h1>
+    <form class="registrationForm" (ngSubmit)="submit(registrationForm)" #registrationForm="ngForm">
+        <input ngModel name="emailInput" type="email" class="textInput" placeholder="Email" required
+        pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$">
+        <p *ngIf="!registrationForm.controls.emailInput?.valid &&
+                      !registrationForm.controls.emailInput?.untouched" class="validationErrorMsg">Podaj email</p>
+        <input ngModel name="loginInput" type="email" class="textInput" placeholder="Login" required minlength="4">
+        <p *ngIf="!registrationForm.controls.loginInput?.valid &&
+                      !registrationForm.controls.loginInput?.untouched" class="validationErrorMsg">Login musi zawierać minimum 4 znaki</p>
+        <input ngModel name="passwordInput" type="password" class="textInput" placeholder="Hasło" required minlength="6">
+        <p *ngIf="!registrationForm.controls.passwordInput?.valid &&
+                      !registrationForm.controls.passwordInput?.untouched" class="validationErrorMsg">Hasło musi zawierać minimum 6 znaków</p>
+        <button type="submit" class="btn primaryBtn">Zarejestruj</button>
+    </form>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+import { NgForm } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,11 @@ export class RegistrationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  submit(registrationForm: NgForm){
+    console.log('rejestracja');
+    registrationForm.reset();
   }
 
 }

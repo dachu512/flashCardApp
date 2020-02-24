@@ -11,7 +11,8 @@ import { RegistrationComponent } from './components/registration/registration.co
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    pathMatch:  'full'
   },
   {
     path: 'category',
